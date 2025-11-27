@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wedding Image Philippines - Book Your Session</title>
+    <link rel="stylesheet" href="calendar.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+    <link rel="icon" type="image/x-icon" href="pics/1.png">
+</head>
+<body>
+    <!-- Front Page (Landing) -->
+    <div id="front-page" class="page">
+        <section class="calendar-hero">
+            <img src="pics/bride9.jpg" alt="" class="calendar-bg">
+            <div class="overlay"></div>
+            <div class="calendar-content">
+                <h1>Book Your Session</h1>
+                <h3>Schedule Your Perfect Moment</h3>
+                <p>Choose your preferred date and time for consultation or Zoom meeting</p>
+                <div class="btn-row">
+                <a href="#" class="cta-btn" id="go-to-booking">Start Booking</a>
+                <a href="index.html" class="cta-btn" i>Home</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Main Booking Page -->
+    <div id="booking-page" class="page">
+        <header>
+            <div>
+                <h1 id="header-title">Wedding Image Philippines</h1>
+                <p>Book Your Perfect Moment</p>
+            </div>
+            <a href="#" class="admin-link" id="admin-link" title="Go to Admin Panel">Admin Panel</a>
+        </header>
+
+        <main>
+            <section class="calendar-reservation">
+                <h2>Book Your Session</h2>
+                <div class="month-year-picker" style="display:flex;gap:8px;justify-content:center;align-items:center;margin:12px 0;">
+                    <label for="month-select" style="color:#ddd;font-weight:600;">Jump to:</label>
+                    <select id="month-select" aria-label="Select month" style="padding:8px;border-radius:6px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06);">
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+                    <input id="year-input" type="number" min="1970" max="2100" aria-label="Enter year" style="width:100px;padding:8px;border-radius:6px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06);" />
+                    <button id="goto-month-btn" class="btn-secondary" style="padding:8px 12px;">Go</button>
+                </div>
+                <div id="calendar"></div>
+
+                <div class="time-header">
+                    <h3 id="time-header-text">Select a date to view available times</h3>
+                </div>
+
+                <div id="time-buttons" class="time-buttons">
+                    <!-- Time buttons are rendered here by script.js -->
+                </div>
+
+                <div id="message"></div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot available"></div>
+                        <span>All Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot partial"></div>
+                        <span>Partially Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot booked"></div>
+                        <span>Fully Booked</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Admin Panel Page -->
+    <div id="admin-page" class="page" style="display: none;">
+        <div class="admin-container">
+            <header class="admin-header">
+                <div class="header-content">
+                    <h1>Admin Panel</h1>
+                    <p>Wedding Image Philippines - Booking Management</p>
+                </div>
+                <button class="back-btn" id="back-to-booking">← Back to Booking</button>
+            </header>
+
+            <main class="admin-main">
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Bookings</div>
+                        <div class="stat-value" id="total-bookings">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">In-Person</div>
+                        <div class="stat-value" id="in-person-count">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Zoom Meetings</div>
+                        <div class="stat-value" id="zoom-count">0</div>
+                    </div>
+                </section>
+
+                <!-- Controls Section -->
+                <section class="controls-section">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search by name, email, or phone...">
+                        <button id="search-btn" class="btn-secondary">Search</button>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="sort-select" class="filter-select">
+                            <option value="date-asc">Sort by Date (Oldest First)</option>
+                            <option value="date-desc">Sort by Date (Newest First)</option>
+                            <option value="name">Sort by Name (A-Z)</option>
+                        </select>
+                        <select id="date-range-filter" class="filter-select">
+                            <option value="">All Dates</option>
+                            <option value="1-week">Last 1 Week</option>
+                            <option value="1-month">Last 1 Month</option>
+                            <option value="1-year">Last 1 Year</option>
+                        </select>
+                        <select id="package-filter" class="filter-select">
+                            <option value="">All Packages</option>
+                            <option value="Bronze">Bronze Package</option>
+                            <option value="Silver">Silver Package</option>
+                            <option value="Gold">Gold Package</option>
+                            <option value="Diamond">Diamond Package</option>
+                            <option value="Birthday">Birthday Package</option>
+                            <option value="Corporate">Corporate Package</option>
+                        </select>
+                        <select id="meeting-filter" class="filter-select">
+                            <option value="">All Meeting Types</option>
+                            <option value="in-person">In-Person</option>
+                            <option value="zoom">Zoom</option>
+                        </select>
+                        <select id="status-filter" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="done">Done</option>
+                            <option value="missed">Missed</option>
+                        </select>
+                        <button id="reset-filters" class="btn-secondary">Reset Filters</button>
+                        <button id="export-btn" class="btn-secondary">Export to CSV</button>
+                    </div>
+                </section>
+
+                <!-- Bookings Table Section -->
+                <section class="bookings-section">
+                    <div class="section-header">
+                        <h2>All Bookings</h2>
+                        <span class="showing-count" id="showing-count">Showing 0 bookings</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="bookings-table" class="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Package</th>
+                                    <th>Meeting Type</th>
+                                    <th>Status</th>
+                                    <th>Notes</th>
+                                    <th>Actions</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                                <!-- Bookings will be populated here -->
+                            </tbody>
+                        </table>
+                        <div id="no-bookings-msg" class="no-bookings">
+                            <p>No bookings found.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="login-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <h3 id="loginTitle">Admin Login</h3>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                
+                <div id="login-error" class="login-error" style="display: none; color: #FF6B6B; margin: 10px 0; text-align: center;"></div>
+                
+                <div class="modal-actions">
+                    <button type="submit" id="login-submit">Login</button>
+                    <button type="button" id="login-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modal-close" title="Close">×</button>
+            <h3 id="modalTitle">Complete Booking</h3>
+
+            <div id="completion-status" class="completion-status warning">⚠️ Please fill in all fields</div>
+
+            <div class="meeting-type-section">
+                <label>Meeting Type</label>
+                <div class="meeting-type-buttons">
+                    <button type="button" class="meeting-type-btn" data-type="in-person">
+                        <span class="meeting-icon">🏢</span>
+                        <span>In-Person</span>
+                        <span class="meeting-sub">Consultation</span>
+                    </button>
+                    <button type="button" class="meeting-type-btn" data-type="zoom">
+                        <span class="meeting-icon">📹</span>
+                        <span>Zoom</span>
+                        <span class="meeting-sub">Meeting</span>
+                    </button>
+                </div>
+                <input type="hidden" id="meeting-type" name="meeting-type" required>
+            </div>
+
+            <form id="modal-form">
+                <label for="package">Choose Package:</label>
+                <select id="package" required>
+                    <option value="" disabled selected>Select a package</option>
+                    <option value="Bronze">Bronze Package</option>
+                    <option value="Silver">Silver Package</option>
+                    <option value="Gold">Gold Package</option>
+                    <option value="Diamond">Diamond Package</option>
+                    <option value="Birthday">Birthday Package</option>
+                    <option value="Corporate">Corporate Package</option>
+                </select>
+
+                <div class="name-row">
+                    <div>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                </div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="notes">Notes:</label>
+                <textarea id="notes"></textarea>
+
+                <div class="modal-actions">
+                    <button type="submit" id="modal-submit">Submit Reservation</button>
+                    <button type="button" id="modal-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Details Modal (Admin) -->
+    <div id="details-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button class="modal-close" id="details-close" title="Close">×</button>
+            <h3>Booking Details</h3>
+            <div id="details-content" class="details-content">
+                <!-- Details will be populated here -->
+            </div>
+            <div class="modal-actions">
+                <button id="details-close-btn" class="btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="scroll-animations.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>

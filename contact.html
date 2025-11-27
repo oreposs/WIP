@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="pics/1.png">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="pics/1.1.png" alt="">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="contact.html" class="highlight">CONTACT</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </header>
+
+  <section class="contact-page-hero">
+    <img src="pics/bride8.jpg" class="contact-page-hero-bg" alt="Background Image" />
+    <div class="contact-page-overlay"></div>
+    <div class="contact-page-hero-content">
+      <h1>Contact Us</h1>
+      <p>Let's start a conversation</p>
+      <a href="calendar.html" class="contact-page-form-btn">book consultations</a>
+    </div>
+  </section>
+
+  <section class="contact-info-section">
+    <h2>Get In Touch</h2>
+    <p class="contact-info-subtitle">
+      We'd love to hear from you. Send us a message and we'll respond as soon
+      as possible.
+    </p>
+
+    <div class="contact-info-wrapper">
+      <div class="contact-info-box">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-info-content">
+            <strong>Phone</strong>
+            <p>+63 917 793 0016</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-info-content">
+            <strong>Email</strong>
+            <p>weddingimagephotography@yahoo.com.ph</p>
+          </div>
+        </div>
+
+        <h3>Follow Us</h3>
+
+        <div class="contact-info-social-icons">
+          <a href="https://facebook.com" class="contact-info-social-circle" target="_blank"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" class="contact-info-social-circle" target="_blank"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="contact-info-social-circle" target="_blank"><i
+              class="fa-brands fa-youtube"></i></a>
+          <a href="mailto:contact@company.com" class="contact-info-social-circle" target="_blank"><i
+              class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <h3>Office Hours</h3>
+        <div class="contact-info-hours">
+          <p>Monday - Friday <span>8:00 AM - 5:00 PM</span></p>
+          <hr class="contact-info-hour-line" />
+          <p>Saturday <span>8:00 AM - 5:00 PM</span></p>
+          <hr class="contact-info-hour-line" />
+          <p>Sunday <span>8:00 AM - 5:00 PM</span></p>
+          <hr class="contact-info-hour-line" />
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+          <img src="pics/INQUIRYBG.jpg" alt="Background" class="contact-form-bg" />
+          <h3>Send us a Message</h3>
+                        
+          <form id="contact-form">
+          <input id="full-name" class="form-control" type="text" required placeholder="Your full name">
+          <input id="email" class="form-control" type="email" required placeholder="your.email@example.com">
+          <input id="phone" class="form-control" type="tel" placeholder="0912-345-6789">
+          <textarea id="notes" class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+              </form> 
+          <p id="status" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact-page-footer">
+    <div class="contact-page-footer-inner">
+      <div class="contact-page-footer-col">
+        <h3>Connect With Us</h3>
+        <p>
+          Follow us on social media for updates, behind-the-scenes content,
+          and the latest news from our team.
+        </p>
+
+        <div class="contact-page-footer-socials">
+          <a href="https://www.facebook.com/WeddingImagePhilippines" target="_blank"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/weddingimagephilippines?igsh=MmF5OGMxdzExOTRm" target="_blank"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@WeddingImage_photography/featured" target="_blank"><i
+              class="fa-brands fa-youtube"></i></a>
+          <a href="mailto:weddingimagephotography@yahoo.com.ph" aria-label="Send an email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="contact-page-footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fa-solid fa-envelope"></i> weddingimagephotography@yahoo.com.ph</p>
+        <hr class="contact-page-footer-line" />
+        <p><i class="fa-solid fa-phone"></i> +63 917 793 0016</p>
+        <hr class="contact-page-footer-line" />
+        <p>
+          <i class="fa-solid fa-location-dot"></i> Bacoor, Cavite, Philippines
+        </p>
+        <hr class="contact-page-footer-line" />
+      </div>
+
+      <div class="contact-page-footer-col">
+        <h3>Business Hours</h3>
+        <p>Monday - Friday <span>8:00 AM - 5:00 PM</span></p>
+        <hr class="contact-page-footer-line" />
+        <p>Saturday <span>8:00 AM - 5:00 PM</span></p>
+        <hr class="contact-page-footer-line" />
+        <p>Sunday <span>8:00 AM - 5:00 PM</span></p>
+        <hr class="contact-page-footer-line" />
+      </div>
+    </div>
+  </footer>
+
+  <section class="contact-celebrate-section">
+    <img src="pics/BOTTOMPIC.jpg" alt="Celebrating Love & Life" class="contact-celebrate-bg" />
+    <div class="contact-celebrate-overlay"></div>
+    <div class="contact-celebrate-content">
+      <h2>Celebrating Love & Life</h2>
+      <p>
+        Every moment deserves to be captured and celebrated. Let us help make
+        your special occasions unforgettable.
+      </p>
+    </div>
+  </section>
+
+  <div class="social-section">
+    <h2 class="social-title">Wedding Image Philippines</h2>
+    <p class="social-subtitle">Capturing memories that last forever</p>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/WeddingImagePhilippines" class="social fb" target="_blank"><i
+          class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/weddingimagephilippines?igsh=MmF5OGMxdzExOTRm" class="social ig"
+        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@WeddingImage_photography/featured" class="social yt" target="_blank"><i
+          class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <script src="scroll-animations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
